@@ -49,11 +49,3 @@ def tinify_response(input_: requests.models.Response, types: Union[dict, str]) -
     output: Union[AnyStr, Dict] = pipe_parser(input_, res_to_string, decode, encode)
 
     return output
-
-if __name__ == "__main__":
-    params: Dict = {'pair': 'btc_jpy', 'limit': 100}
-    res = fetch('https://coincheck.com/api/trades', params=params)
-    print(res)
-    data = tinify_response(res, str)
-
-    print(data)
