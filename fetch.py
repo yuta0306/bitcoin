@@ -3,8 +3,8 @@ import sys
 from typing import Any, AnyStr, Tuple, List, Union, Dict, Iterable, Optional, Callable
 import requests
 
-def fetch(url: AnyStr, params: Dict={}) -> Optional[requests.models.Response]:
-    res: requests.models.Response = requests.get(url, params=params)
+def fetch(endpoint: AnyStr, params: Dict={}) -> Optional[requests.models.Response]:
+    res: requests.models.Response = requests.get(endpoint, params=params)
     if res.status_code == 200:
         return res
     else:
